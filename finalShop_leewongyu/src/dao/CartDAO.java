@@ -75,7 +75,7 @@ public class CartDAO {
 		if(!hasCart()) return;
 		for(Cart c : cartList)
 			if(c.getId().equals(cont.getLoginId()))
-				System.out.printf(c.toString()+"총 %d원\n", "",dao.getItemName(c.getItemNum()),dao.getItemPrice(c.getItemNum()),getCartMoney(c.getCartNum()));
+				System.out.printf(c.toString()+" 총 %d원\n", "",dao.getItemName(c.getItemNum()),dao.getItemPrice(c.getItemNum()),getCartMoney(c.getCartNum()));
 		System.out.println("=====================");
 		System.out.printf("총 %d 개 (%10d 원)\n",getTotalCnt(),getTotalMoney());
 		System.out.println("=====================");	
@@ -120,7 +120,7 @@ public class CartDAO {
 				}
 			}
 			if(!hasItem) {
-				list.add(c);
+				list.add(new Cart(c));
 				list.get(list.size() - 1).setCartNum(list.size());
 			}
 		}

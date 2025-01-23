@@ -7,6 +7,13 @@ public class Cart {
 	private int itemNum;
 	private int itemCnt;
 
+	public Cart(Cart c) {
+		this.cartNum = c.getCartNum();
+		this.id = c.getId();
+		this.itemNum = c.getItemNum();
+		this.itemCnt = c.getItemCnt();
+	}
+	
 	public Cart(String cartNum, String id, String itemNum, String itemCnt) {
 		this.cartNum = Integer.parseInt(cartNum);
 		this.id = id;

@@ -140,8 +140,9 @@ public class ItemDAO {
 		CartDAO.getInstance().deleteAll(num);
 		for(int i = 0 ; i < itemList.size() ; i++)
 			if(itemList.get(i).getItemNum() == num) {
-				deleteCategoryName(itemList.get(i).getCategoryName());
+				String categoryName =itemList.get(i).getCategoryName(); 
 				itemList.remove(i);
+				deleteCategoryName(categoryName);
 				break;
 			}
 		Util.showMsg("아이템 삭제 완료");
@@ -161,9 +162,23 @@ public class ItemDAO {
 	
 	private void printAll() {
 		System.out.println("====== 카테고리별 아이템 목록 =======");
-		itemList.stream().sorted((i,k) -> i.getItemName().compareTo(k.getItemName())).sorted((i,k) -> k.getCategoryName().compareTo(i.getCategoryName())).forEach(System.out::println);
+		itemList.stream().sorted(this::sort).forEach(System.out::println);
 		Util.showMsg("아이템 삭제 시 구매 내역이 사라집니다.");
 	}
+	
+	private int sort(Item i, Item k) {
+		if(sortCategory(k,i) == 0)
+			return sortName(i, k);
+		return sortCategory(k,i);
+	}
+	
+	private int sortName(Item i, Item k) {
+		return i.getItemName().compareTo(k.getItemName());
+	}
+	private int sortCategory(Item i, Item k) {
+		return i.getCategoryName().compareTo(k.getCategoryName());
+	}
+	
 	public String getSaveData() {
 		String data = "";
 		for(Item i : itemList)
