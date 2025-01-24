@@ -7,7 +7,7 @@ import util.Util;
 public class MemberBoard implements MenuCommand {
 
 	BoardDAO dao = BoardDAO.getInstance();
-	
+
 	@Override
 	public void init() {
 		System.out.println("=================[ 게시판 ]=================");
@@ -21,16 +21,14 @@ public class MemberBoard implements MenuCommand {
 		if (sel == 0) {
 			Util.showMsg("프로그램 종료");
 			cont.setNext(null);
-		}
-		else if (sel == 1) {
+		} else if (sel == 1)
 			dao.showBoard();
-		} else if (sel == 2) {
+		else if (sel == 2)
 			dao.addBoard();
-		} else if (sel == 3) {
+		else if (sel == 3)
 			dao.deleteBoard();
-		} else if (sel == 4) {
+		else if (sel == 4)
 			cont.setNext("MemberMain");
-		} 
 
 		return false;
 	}

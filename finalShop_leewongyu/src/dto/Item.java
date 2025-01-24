@@ -13,9 +13,11 @@ public class Item {
 		this.itemName = itemName;
 		this.price = Integer.parseInt(price);
 	}
+
 	public static void plusNum() {
 		num++;
 	}
+
 	public static int getNum() {
 		return num;
 	}
@@ -58,7 +60,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return String.format("[%-3d] [%6s] [%6s] [%9d원]", itemNum,categoryName,itemName,price);
+		return String.format("[%-3d] [%6s] [%6s] [%9d원]", itemNum, categoryName, itemName, price);
 	}
 
 }

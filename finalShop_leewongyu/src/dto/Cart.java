@@ -13,16 +13,18 @@ public class Cart {
 		this.itemNum = c.getItemNum();
 		this.itemCnt = c.getItemCnt();
 	}
-	
+
 	public Cart(String cartNum, String id, String itemNum, String itemCnt) {
 		this.cartNum = Integer.parseInt(cartNum);
 		this.id = id;
 		this.itemNum = Integer.parseInt(itemNum);
 		this.itemCnt = Integer.parseInt(itemCnt);
 	}
+
 	public static void plusNum() {
 		num++;
 	}
+
 	public static int getNum() {
 		return num;
 	}
@@ -65,7 +67,7 @@ public class Cart {
 
 	@Override
 	public String toString() {
-		return String.format("[%-3d] %s %d개", cartNum,"%6s [%6s] [%9d원]",itemCnt);
+		return String.format("[%-3d] %s %d개", cartNum, "%6s [%6s] [%9d원]", itemCnt);
 	}
 
 }

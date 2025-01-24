@@ -20,16 +20,15 @@ public class MemberInfo implements MenuCommand {
 		if (sel == 0) {
 			Util.showMsg("프로그램 종료");
 			cont.setNext(null);
-		}
-		else if (sel == 1) {
+		} else if (sel == 1)
 			MemberDAO.getInstance().setPw();
-		} else if (sel == 2) {
+		else if (sel == 2)
 			cont.setNext("MemberMain");
-		} 
-
+		
 		return false;
 	}
 
+	/** print a login member information */
 	private void printMyInfo() {
 		MemberDAO.getInstance().printMyInfo();
 		System.out.println("=====================");

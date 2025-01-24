@@ -2,7 +2,7 @@ package dto;
 
 public class Board {
 	private static int num = 1;
-	
+
 	private int boardNum;
 	private String title;
 	private String id;
@@ -18,9 +18,11 @@ public class Board {
 		this.contents = contents;
 		this.hits = Integer.parseInt(hits);
 	}
+
 	public static void plusNum() {
 		num++;
 	}
+
 	public static int getNum() {
 		return num;
 	}
@@ -79,6 +81,6 @@ public class Board {
 
 	@Override
 	public String toString() {
-		return String.format("[ 제목 : %-10s 작성자 : %-7s 날짜 : %s 조회수 : %d ]",title,id,date,hits);
+		return String.format("[ 제목 : %-10s 작성자 : %-7s 날짜 : %s 조회수 : %d ]", title, id, date, hits);
 	}
 }

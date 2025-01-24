@@ -19,14 +19,12 @@ public class AdminMember implements MenuCommand {
 		if (sel == 0) {
 			Util.showMsg("프로그램 종료");
 			cont.setNext(null);
-		}
-		else if (sel == 1) {
+		} else if (sel == 1)
 			MemberDAO.getInstance().printAll();
-		} else if (sel == 2) {
+		else if (sel == 2)
 			MemberDAO.getInstance().deleteMember();
-		} else if (sel == 3) {
+		else if (sel == 3)
 			cont.setNext("AdminMain");
-		} 
 
 		return false;
 	}

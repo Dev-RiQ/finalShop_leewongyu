@@ -1,6 +1,5 @@
 package menu_admin;
 
-
 import _mall.MenuCommand;
 import dao.BoardDAO;
 import util.Util;
@@ -20,14 +19,12 @@ public class AdminBoard implements MenuCommand {
 		if (sel == 0) {
 			Util.showMsg("프로그램 종료");
 			cont.setNext(null);
-		}
-		else if (sel == 1) {
+		} else if (sel == 1)
 			BoardDAO.getInstance().showBoard();
-		} else if (sel == 2) {
+		else if (sel == 2)
 			BoardDAO.getInstance().deleteAdminBoard();
-		} else if (sel == 3) {
+		else if (sel == 3)
 			cont.setNext("AdminMain");
-		} 
 
 		return false;
 	}

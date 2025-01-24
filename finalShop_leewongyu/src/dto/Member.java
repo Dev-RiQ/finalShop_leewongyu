@@ -37,6 +37,7 @@ public class Member {
 	public static void setNum(int num) {
 		Member.num = num;
 	}
+
 	public static void plusNum() {
 		num++;
 	}
@@ -59,7 +60,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return String.format("[%-5d] [%10s] [%10s] [%10s]", memberNum,id,pw,memberName);
+		return String.format("[%-5d] [%10s] [%10s] [%10s]", memberNum, id, pw, memberName);
 	}
 
 }

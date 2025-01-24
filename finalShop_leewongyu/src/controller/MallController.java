@@ -21,13 +21,13 @@ import menu_member._MemberMain;
 
 public class MallController {
 
+	private MallController() {}
+	
 	private static MallController instance;
+	
 	public static MallController getInstance() {
 		if(instance == null) instance = new MallController();
 		return instance;
-	}
-	
-	private MallController() {
 	}
 
 	private String loginId;
@@ -40,7 +40,7 @@ public class MallController {
 	}
 
 	public void setNext(String next) {
-		this.next = next; 
+		this.next = next;
 	}
 
 	public String getLoginId() {
@@ -75,16 +75,13 @@ public class MallController {
 	}
 
 	public void update() {
-		while (true) {
-			if (!menuCom.update()) {
+		while (true)
+			if (!menuCom.update())
 				if (next != null) {
 					menuCom = mapCont.get(next);
 					menuCom.init();
-				} else {
+				} else
 					return;
-				}
-			}
-		}
 	}
 
 }

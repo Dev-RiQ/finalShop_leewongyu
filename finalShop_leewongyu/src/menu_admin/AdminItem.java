@@ -19,16 +19,14 @@ public class AdminItem implements MenuCommand {
 		if (sel == 0) {
 			Util.showMsg("프로그램 종료");
 			cont.setNext(null);
-		}
-		else if (sel == 1) {
+		} else if (sel == 1)
 			ItemDAO.getInstance().addItem();
-		} else if (sel == 2) {
+		else if (sel == 2)
 			ItemDAO.getInstance().deleteItem();
-		} else if (sel == 3) {
+		else if (sel == 3)
 			CartDAO.getInstance().printCartList();
-		} else if (sel == 4) {
+		else if (sel == 4)
 			cont.setNext("AdminMain");
-		} 
 
 		return false;
 	}
