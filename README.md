@@ -1,3 +1,3 @@
-### UML Diagram
+## UML Diagram
 
-![123](https://github.com/user-attachments/assets/9334adc4-e4b5-4799-8ecd-b26fc27ec5f7)
+![UML](https://github.com/user-attachments/assets/9265e972-cc1c-4bb8-9e92-643b180405a2)
